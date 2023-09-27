@@ -10,18 +10,18 @@ class AddCardPage extends StatefulWidget {
 }
 
 class _AddCardPageState extends State<AddCardPage> {
-  late var uuid;
-  final String _issuerEmail = 'example@example.com';
+
+  final String _issuerEmail = 'exampl0e@example.com';
   final String _issuerId = '3388000000022269580';
-  final String _passClass = '3388000000022269580';
+  final String _passClass = 'testId';
 
   String _passId = "";
   String _examplePass = "";
 
   @override
   void initState() {
-    uuid = const Uuid();
-    _passId = uuid.v1();
+    var uuid = const Uuid();
+    _passId = uuid.v1().toString();
     print(_passId);
     _setPass();
     super.initState();
@@ -51,14 +51,16 @@ class _AddCardPageState extends State<AddCardPage> {
       "iss": "$_issuerEmail",
       "aud": "google",
       "typ": "savetowallet",
-      "origins": [],
+      "origins": [
+      'http://google.com.br'
+      ],
       "payload": {
         "genericObjects": [
           {
             "id": "$_issuerId.$_passId",
-            "classId": "$_passClass.$_passId",
+            "classId": "$_issuerId.$_passClass",
             "genericType": "GENERIC_TYPE_UNSPECIFIED",
-            "hexBackgroundColor": "#1f2023",
+            "hexBackgroundColor": "#ff1930",
             "logo": {
               "sourceUri": {
                 "uri": "https://static.coinall.ltd/cdn/oksupport/asset/currency/icon/btc.png"
@@ -67,35 +69,31 @@ class _AddCardPageState extends State<AddCardPage> {
             "cardTitle": {
               "defaultValue": {
                 "language": "en",
-                "value": "Carteira Bitcoin"
-              }
-            },
-            "subheader": {
-              "defaultValue": {
-                "language": "en",
-                "value": "Hash"
+                "value": "cardTitle"
               }
             },
             "header": {
               "defaultValue": {
                 "language": "en",
-                "value": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+                "value": "header"
+              }
+            },
+            "subheader": {
+              "defaultValue": {
+                "language": "en",
+                "value": "subheader"
               }
             },
             "barcode": {
               "type": "QR_CODE",
-              "value": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
-            },
-            "heroImage": {
-              "sourceUri": {
-                "uri": "https://bitcoin.org/img/icons/logotop.svg?1693519667"
-              }
+              "value": "Editavel",
+              "alternateText": "Editavel ou removivel"
             },
             "textModulesData": [
               {
-                "header": "POINTS",
-                "body": "1234",
-                "id": "points"
+                "header": "header",
+                "body": "body",
+                "id": "id"
               }
             ]
           }
