@@ -13,7 +13,7 @@ class _AddCardPageState extends State<AddCardPage> {
 
   final String _issuerEmail = 'exampl0e@example.com';
   final String _issuerId = '3388000000022269580';
-  final String _passClass = 'testId';
+  final String _passClass = 'idClass2';
 
   String _passId = "";
   String _examplePass = "";
@@ -46,6 +46,8 @@ class _AddCardPageState extends State<AddCardPage> {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
 
   void _setPass() {
+    //https://developers.google.com/wallet/generic/resources/pass-editor?hl=pt-br
+    //https://developers.google.com/wallet/tickets/events/web?hl=pt-br
     _examplePass = """ 
     {
       "iss": "$_issuerEmail",
@@ -59,8 +61,8 @@ class _AddCardPageState extends State<AddCardPage> {
           {
             "id": "$_issuerId.$_passId",
             "classId": "$_issuerId.$_passClass",
-            "genericType": "GENERIC_TYPE_UNSPECIFIED",
-            "hexBackgroundColor": "#ff1930",
+            "type": "GENERIC_PRIVATE_PASS_TYPE_UNSPECIFIED",
+            "hexBackgroundColor": "#fcf526",
             "logo": {
               "sourceUri": {
                 "uri": "https://static.coinall.ltd/cdn/oksupport/asset/currency/icon/btc.png"
@@ -69,7 +71,7 @@ class _AddCardPageState extends State<AddCardPage> {
             "cardTitle": {
               "defaultValue": {
                 "language": "en",
-                "value": "cardTitle"
+                "value": "no qr code"
               }
             },
             "header": {
