@@ -61,7 +61,7 @@ class _AddCardPageState extends State<AddCardPage> {
             "hexBackgroundColor": "#fcf526",
             "logo": {
               "sourceUri": {
-                "uri": "https://static.coinall.ltd/cdn/oksupport/asset/currency/icon/btc.png"
+                "uri": "https://storage.googleapis.com/wallet-lab-tools-codelab-artifacts-public/pass_google_logo.jpg"
               }
             },
             "cardTitle": {
@@ -87,6 +87,10 @@ class _AddCardPageState extends State<AddCardPage> {
               "value": "Editavel",
               "alternateText": "Editavel ou removivel"
             },
+            "heroImage": {
+              "sourceUri": {
+                "uri": "https://storage.googleapis.com/wallet-lab-tools-codelab-artifacts-public/google-io-hero-demo-only.png",
+              },
             "textModulesData": [
               {
                 "header": "header",
