@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:add_to_google_wallet/widgets/add_to_google_wallet_button.dart';
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 class AddCardPage extends StatefulWidget {
@@ -10,7 +10,6 @@ class AddCardPage extends StatefulWidget {
 }
 
 class _AddCardPageState extends State<AddCardPage> {
-
   final String _issuerEmail = 'exampl0e@example.com';
   final String _issuerId = '3388000000022269580';
   final String _passClass = 'idClass2';
@@ -35,10 +34,7 @@ class _AddCardPageState extends State<AddCardPage> {
                 pass: _examplePass,
                 onSuccess: () => _showSnackBar(context, 'Success!'),
                 onCanceled: () => _showSnackBar(context, 'Action canceled.'),
-                onError: (Object error) {
-                  print(error.toString());
-                  _showSnackBar(context, error.toString());
-                },
+                onError: (Object error) => _showSnackBar(context, error.toString()),
                 locale: const Locale.fromSubtags(languageCode: 'pt-br', countryCode: 'BR'))));
   }
 
